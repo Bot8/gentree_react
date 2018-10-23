@@ -1,4 +1,5 @@
 import React, {PureComponent} from 'react'
+import './person-photo.css'
 
 export default class PersonPhoto extends PureComponent {
   render() {

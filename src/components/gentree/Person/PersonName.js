@@ -1,4 +1,5 @@
 import React, {PureComponent} from 'react'
+import './person-name.css'
 
 export default class PersonName extends PureComponent {
   render() {

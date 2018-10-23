@@ -1,4 +1,5 @@
 import React, {PureComponent} from 'react'
+import './person-years-of-life.css'
 
 export default class PersonYearsOfLife extends PureComponent {
   render() {

@@ -1,5 +1,7 @@
 import React, {Component} from 'react'
 import Person from './Person'
+import './tree.css'
+import 'muicss/lib/sass/mui.scss'
 
 export default class Tree extends Component {
   render() {

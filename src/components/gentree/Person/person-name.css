@@ -1,0 +1,8 @@
+.person-name {
+  text-align: center;
+}
+
+.person-name_last-name {
+  font-weight: bold;
+  font-size: 16px;
+}
