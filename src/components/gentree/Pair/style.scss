@@ -1,0 +1,31 @@
+$side-padding: 40px;
+
+.pair {
+    width: 480px;
+    display: block;
+    overflow: hidden;
+    position: relative;
+}
+
+.pair::after {
+    content: '';
+    display: block;
+    position: absolute;
+    border-bottom: 1px solid #838383;
+    top: 50%;
+    width: 100%;
+    z-index: -10;
+}
+
+.pair__item {
+    display: inline-block;
+    z-index: 10;
+}
+
+.pair__item_first {
+    margin-right: $side-padding;
+}
+
+.pair__item_last {
+    margin-left: $side-padding;
+}

@@ -5,6 +5,6 @@ import Tree from './gentree/Tree'
 
 export default class App extends PureComponent {
   render() {
-    return <Tree list={fixtures}/>
+    return <Tree tree={fixtures}/>
   }
 }

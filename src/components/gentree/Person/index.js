@@ -18,7 +18,7 @@ export default class Person extends PureComponent {
       panelClass = this.state.isHovered ? "mui--z2" : "mui--z1";
 
     return (
-      <Panel className={`tree-card ${panelClass}`} onMouseEnter={this.handleHover} onMouseLeave={this.handleHover}>
+      <Panel className={`person ${panelClass}`} onMouseEnter={this.handleHover} onMouseLeave={this.handleHover}>
         <PersonPhoto photo={person.photo}/>
         <PersonName
           first_name={person.first_name}

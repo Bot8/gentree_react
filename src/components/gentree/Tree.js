@@ -1,22 +1,29 @@
 import React, {Component} from 'react'
-import Person from './Person'
+import Pair from './Pair'
 import './tree.css'
 import 'muicss/lib/sass/mui.scss'
 
 export default class Tree extends Component {
   render() {
-    const persons = this.props.list.map(
-      person => {
-        return (
-          <Person person={person}/>
-        )
-      }
-    );
+    const root = this.props.tree;
+    let result = [];
+
+    this.renderNode(root, result);
 
     return (
       <div className="tree">
-        {persons}
+        {result}
       </div>
     )
+  }
+
+  renderNode = (node, result) => {
+    if (!node.parents) {
+      return;
+    }
+
+    result.push(
+      <Pair pair={node.parents}/>
+    );
   }
 }
