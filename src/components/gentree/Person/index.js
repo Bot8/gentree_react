@@ -19,6 +19,8 @@ export default class Person extends PureComponent {
 
     return (
       <Panel className={`person ${panelClass}`} onMouseEnter={this.handleHover} onMouseLeave={this.handleHover}>
+        {/*TODO remove debug span*/}
+        <span>#{person.id}</span>
         <PersonPhoto photo={person.photo}/>
         <PersonName
           first_name={person.first_name}

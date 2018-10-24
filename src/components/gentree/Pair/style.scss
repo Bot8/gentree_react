@@ -1,29 +1,50 @@
 $side-padding: 40px;
+$connection: 1px solid #838383;
 
 .pair {
     width: 480px;
     display: block;
-    overflow: hidden;
     position: absolute;
 }
 
-.pair::after {
+.pair::before {
     content: '';
     display: block;
     position: absolute;
-    border-bottom: 1px solid #838383;
+    border-bottom: $connection;
     top: 50%;
     width: 100%;
     z-index: -10;
 }
 
+.pair_with-childs:after {
+    content: '';
+    display: block;
+    position: absolute;
+    border-left: $connection;
+    top: 50%;
+    left: 50%;
+    height: 50%;
+}
+
 .pair__item {
     display: inline-block;
     z-index: 10;
+    position: relative;
 }
 
 .pair__item_first {
     margin-right: $side-padding;
+}
+
+.pair__item_first::after {
+    content: '';
+    display: block;
+    position: absolute;
+    border-left: $connection;
+    top: -30px;
+    left: 50%;
+    height: 30px;
 }
 
 .pair__item_last {

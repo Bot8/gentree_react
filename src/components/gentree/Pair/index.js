@@ -5,14 +5,6 @@ import './style.scss'
 
 export default class Pair extends PureComponent {
   render() {
-    const
-      verticalMultiplier = 300,
-      horizontalMultiplier = 500;
-
-    const
-      top = verticalMultiplier * this.props.position.y,
-      left = horizontalMultiplier * this.props.position.x;
-
     const pair = this.props.pair.map(function (person, index) {
       const pairItemClass = index === 0 ? 'first' : 'last';
 
@@ -28,10 +20,10 @@ export default class Pair extends PureComponent {
 
     return (
       <div
-        className="pair"
+        className={`pair ${this.props.haveChilds ? 'pair_with-childs' : ''}`}
         style={{
-          'top': `${top}px`,
-          'left': `${left}px`,
+          'top': `${this.props.top}px`,
+          'left': `${this.props.left}px`,
         }}
       >
         {pair}

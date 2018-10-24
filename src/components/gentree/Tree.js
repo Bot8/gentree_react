@@ -1,11 +1,14 @@
 import React, {Component} from 'react'
 import Pair from './Pair'
 import './tree.css'
+import PairChildsConnector from "./PairChildsConnector";
 
 export default class Tree extends Component {
   constructor(props) {
     super(props);
     this.minX = 0;
+    this.verticalMultiplier = 300;
+    this.horizontalMultiplier = 500;
   }
 
   render() {
@@ -40,7 +43,7 @@ export default class Tree extends Component {
     childs.forEach((item, key) => {
       const childX = x + key - half;
 
-      if (self.minX  > childX) {
+      if (self.minX > childX) {
         self.minX = childX;
       }
 
@@ -60,7 +63,7 @@ export default class Tree extends Component {
 
     root['position']['x'] += size;
 
-    if(root['childs']) {
+    if (root['childs']) {
       root['childs'].forEach((item) => {
         self.pushPairs(item, size);
       });
@@ -68,16 +71,46 @@ export default class Tree extends Component {
   };
 
   renderNode = (node, result) => {
-    if (node.parents) {
-      result.push(
-        <Pair pair={node.parents} position={node.position}/>
-      );
-    }
+    result.push(
+      <Pair
+        top={this.verticalMultiplier * node.position.y}
+        left={this.horizontalMultiplier * node.position.x}
+        pair={node.parents}
+        position={node.position}
+        haveChilds={!!node.childs}
+      />
+    );
 
     if (node.childs) {
+      let
+        left = null,
+        right = null;
+
       node.childs.forEach((node) => {
+        if (left === null || node.position.x < left) {
+          left = node.position.x
+        }
+
+        if (right === null || node.position.x > right) {
+          right = node.position.x
+        }
+
         this.renderNode(node, result);
-      })
+      });
+
+      let connectorLength = (right - left) * this.horizontalMultiplier;
+
+      if (connectorLength === 0) {
+        connectorLength = 140;
+      }
+
+      result.push(
+        <PairChildsConnector
+          width={connectorLength}
+          top={(node.position.y + 1) * this.verticalMultiplier - 30}
+          left={left * this.horizontalMultiplier + 100}
+        />
+      )
     }
   };
 }
