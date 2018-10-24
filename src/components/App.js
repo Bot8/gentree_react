@@ -1,7 +1,7 @@
 import React, {PureComponent} from 'react'
 import fixtures from '../fixtures/gentree'
-import 'bootstrap/dist/css/bootstrap.css'
 import Tree from './gentree/Tree'
+import 'muicss/lib/sass/mui.scss'
 
 export default class App extends PureComponent {
   render() {

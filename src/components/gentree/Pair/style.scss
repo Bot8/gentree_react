@@ -4,7 +4,7 @@ $side-padding: 40px;
     width: 480px;
     display: block;
     overflow: hidden;
-    position: relative;
+    position: absolute;
 }
 
 .pair::after {
