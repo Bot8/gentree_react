@@ -12,6 +12,10 @@ export default class Pair extends PureComponent {
           `pair__item_${index === 0 ? 'first' : 'last'}`
         ];
 
+        if (!self.props.isRoot) {
+          className.push(`pair__item_nested`)
+        }
+
         if (self.props.edges) {
           self.props.edges.forEach(edge => {
             className.push(`pair__item_edge-${edge}`)

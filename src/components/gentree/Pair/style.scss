@@ -36,7 +36,11 @@ $connection: 1px solid #838383;
     margin-right: $side-padding;
 }
 
-.pair__item_first::after {
+.pair__item_last {
+    margin-left: $side-padding;
+}
+
+.pair__item_first.pair__item_nested::after {
     content: '';
     display: block;
     position: absolute;
@@ -48,7 +52,7 @@ $connection: 1px solid #838383;
     z-index: -50;
 }
 
-.pair__item_last.pair__item_edge-right::after {
+.pair__item_last.pair__item_nested.pair__item_edge-right::after {
     content: '';
     display: block;
     position: absolute;
@@ -59,17 +63,13 @@ $connection: 1px solid #838383;
     z-index: -100;
 }
 
-.pair__item_last.pair__item_edge-left.pair__item_edge-right::after {
+.pair__item_last.pair__item_nested.pair__item_edge-left.pair__item_edge-right::after {
     left: -40px;
     width: 150%;
 }
 
-.pair__item_first.pair__item_edge-left::after,
-.pair__item_last.pair__item_edge-right::after
+.pair__item_first.pair__item_nested.pair__item_edge-left::after,
+.pair__item_last.pair__item_nested.pair__item_edge-right::after
 {
     border-top: 1px solid white;
-}
-
-.pair__item_last {
-    margin-left: $side-padding;
 }
