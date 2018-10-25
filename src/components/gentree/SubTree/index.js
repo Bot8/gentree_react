@@ -1,6 +1,6 @@
 import React, {PureComponent} from 'react'
-import Pair from '../Pair'
-import PairChildsConnector from '../Pair/PairChildsConnector'
+import Pair from 'components/gentree/Pair'
+import PairChildsConnector from 'components/gentree/Pair/PairChildsConnector'
 import './style.css'
 
 export default class SubTree extends PureComponent {

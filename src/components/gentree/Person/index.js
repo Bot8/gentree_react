@@ -1,7 +1,7 @@
 import React, {PureComponent} from 'react'
-import PersonName from './PersonName'
-import PersonYearsOfLife from './PersonYearsOfLife'
-import PersonPhoto from "./PersonPhoto";
+import PersonName from 'components/gentree/Person/PersonName'
+import PersonYearsOfLife from 'components/gentree/Person/PersonYearsOfLife'
+import PersonPhoto from "components/gentree/Person/PersonPhoto";
 import Panel from 'muicss/lib/react/panel';
 import './person.css'
 

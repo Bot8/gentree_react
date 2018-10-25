@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import './tree.css';
-import SubTree from './SubTree';
-
+import SubTree from 'components/gentree/SubTree';
 
 export default class Tree extends Component {
   render() {

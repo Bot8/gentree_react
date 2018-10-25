@@ -1,5 +1,5 @@
 import React, {PureComponent} from 'react'
-import Person from '../Person'
+import Person from 'components/gentree/Person'
 import './style.scss'
 
 export default class Pair extends PureComponent {

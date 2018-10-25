@@ -1,6 +1,6 @@
 import React, {PureComponent} from 'react'
-import fixtures from '../fixtures/gentree'
-import Tree from './gentree/Tree'
+import fixtures from 'fixtures/gentree'
+import Tree from 'components/gentree/Tree'
 import 'muicss/lib/sass/mui.scss'
 
 export default class App extends PureComponent {
