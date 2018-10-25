@@ -4,7 +4,6 @@ $connection: 1px solid #838383;
 .pair {
     width: 480px;
     display: block;
-    position: absolute;
 }
 
 .pair::before {
@@ -41,10 +40,34 @@ $connection: 1px solid #838383;
     content: '';
     display: block;
     position: absolute;
-    border-left: $connection;
-    top: -30px;
-    left: 50%;
-    height: 30px;
+    border-right: $connection;
+    top: -31px;
+    right: 50%;
+    height: 31px;
+    width: 100%;
+    z-index: -50;
+}
+
+.pair__item_last.pair__item_edge-right::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: -31px;
+    height: 31px;
+    left: -180px;
+    width: 410px;
+    z-index: -100;
+}
+
+.pair__item_last.pair__item_edge-left.pair__item_edge-right::after {
+    left: -40px;
+    width: 150%;
+}
+
+.pair__item_first.pair__item_edge-left::after,
+.pair__item_last.pair__item_edge-right::after
+{
+    border-top: 1px solid white;
 }
 
 .pair__item_last {

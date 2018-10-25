@@ -1,4 +1,4 @@
 .pair-childs-connector {
-  position: absolute;
+  display: block;
   border-top: 1px solid black;
 }

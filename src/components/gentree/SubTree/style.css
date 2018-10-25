@@ -1,0 +1,16 @@
+.subtree, .subtree__parents, .subtree__childs {
+  display: inline-block;
+  text-align: center;
+  position: relative;
+  vertical-align: top
+}
+.subtree {
+  padding: 15px;
+}
+.subtree__childs {
+  padding-top: 15px;
+}
+.subtree__parents, .subtree__childs {
+  white-space: nowrap;
+}
+

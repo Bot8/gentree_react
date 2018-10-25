@@ -45,7 +45,7 @@ export default {
         {
           'parents': [
             {
-              'id': 3,
+              'id': 5,
               'first_name': 'Иван',
               'last_name': 'Рюрикович',
               'middle_name': 'Васильевич',
@@ -54,7 +54,7 @@ export default {
               'photo': '/fixtures/ivan.jpg'
             },
             {
-              'id': 4,
+              'id': 6,
               'first_name': 'Марфа',
               'last_name': 'Собакина',
               'middle_name': 'Васильевна',
@@ -69,7 +69,7 @@ export default {
     {
       'parents': [
         {
-          'id': 3,
+          'id': 7,
           'first_name': 'Иван',
           'last_name': 'Рюрикович',
           'middle_name': 'Васильевич',
@@ -78,7 +78,7 @@ export default {
           'photo': '/fixtures/ivan.jpg'
         },
         {
-          'id': 4,
+          'id': 8,
           'first_name': 'Марфа',
           'last_name': 'Собакина',
           'middle_name': 'Васильевна',
@@ -91,7 +91,7 @@ export default {
         {
           'parents': [
             {
-              'id': 3,
+              'id': 9,
               'first_name': 'Иван',
               'last_name': 'Рюрикович',
               'middle_name': 'Васильевич',
@@ -100,7 +100,7 @@ export default {
               'photo': '/fixtures/ivan.jpg'
             },
             {
-              'id': 4,
+              'id': 10,
               'first_name': 'Марфа',
               'last_name': 'Собакина',
               'middle_name': 'Васильевна',
@@ -113,7 +113,7 @@ export default {
         {
           'parents': [
             {
-              'id': 3,
+              'id': 11,
               'first_name': 'Иван',
               'last_name': 'Рюрикович',
               'middle_name': 'Васильевич',
@@ -122,7 +122,7 @@ export default {
               'photo': '/fixtures/ivan.jpg'
             },
             {
-              'id': 4,
+              'id': 12,
               'first_name': 'Марфа',
               'last_name': 'Собакина',
               'middle_name': 'Васильевна',
@@ -135,7 +135,7 @@ export default {
         {
           'parents': [
             {
-              'id': 3,
+              'id': 13,
               'first_name': 'Иван',
               'last_name': 'Рюрикович',
               'middle_name': 'Васильевич',
@@ -144,7 +144,7 @@ export default {
               'photo': '/fixtures/ivan.jpg'
             },
             {
-              'id': 4,
+              'id': 14,
               'first_name': 'Марфа',
               'last_name': 'Собакина',
               'middle_name': 'Васильевна',
@@ -157,7 +157,7 @@ export default {
         {
           'parents': [
             {
-              'id': 3,
+              'id': 15,
               'first_name': 'Иван',
               'last_name': 'Рюрикович',
               'middle_name': 'Васильевич',
@@ -166,7 +166,7 @@ export default {
               'photo': '/fixtures/ivan.jpg'
             },
             {
-              'id': 4,
+              'id': 16,
               'first_name': 'Марфа',
               'last_name': 'Собакина',
               'middle_name': 'Васильевна',
@@ -181,7 +181,7 @@ export default {
     {
       'parents': [
         {
-          'id': 3,
+          'id': 17,
           'first_name': 'Иван',
           'last_name': 'Рюрикович',
           'middle_name': 'Васильевич',
@@ -190,7 +190,7 @@ export default {
           'photo': '/fixtures/ivan.jpg'
         },
         {
-          'id': 4,
+          'id': 18,
           'first_name': 'Марфа',
           'last_name': 'Собакина',
           'middle_name': 'Васильевна',
@@ -203,7 +203,7 @@ export default {
         {
           'parents': [
             {
-              'id': 3,
+              'id': 19,
               'first_name': 'Иван',
               'last_name': 'Рюрикович',
               'middle_name': 'Васильевич',
@@ -212,7 +212,7 @@ export default {
               'photo': '/fixtures/ivan.jpg'
             },
             {
-              'id': 4,
+              'id': 20,
               'first_name': 'Марфа',
               'last_name': 'Собакина',
               'middle_name': 'Васильевна',

@@ -6,9 +6,8 @@ export default class PairChildsConnector extends PureComponent {
     return <div
       className='pair-childs-connector'
       style={{
-        'width': `${this.props.width}px`,
-        'top': `${this.props.top}px`,
-        'left': `${this.props.left}px`
+        'marginLeft': this.props.leftOffcet,
+        'marginRight': this.props.rightOffcet,
       }}
     />
   }
