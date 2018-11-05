@@ -1,43 +1,45 @@
-import React, {PureComponent} from 'react'
-import Pair from 'components/gentree/Pair'
-import PairChildsConnector from 'components/gentree/Pair/PairChildsConnector'
-import './style.css'
+import React, { PureComponent } from 'react';
+import Pair from 'components/gentree/Pair';
+import PairChildsConnector from 'components/gentree/Pair/PairChildsConnector';
+import './style.css';
 
 export default class SubTree extends PureComponent {
   render() {
+    const { parents, childs, isRoot, edges, level } = this.props;
+    
     return (
       <div className='subtree'>
         <div className='subtree__parents'>
-          <Pair parents={this.props.parents} isRoot={this.props.isRoot} haveChilds={!!this.props.childs} edges={this.props.edges}/>
+          <Pair parents={parents} isRoot={isRoot} haveChilds={!!childs} edges={edges}/>
         </div>
-        {this.props.childs && this.renderChilds()}
+        {childs && this.renderChilds(level, childs)}
       </div>
     );
   }
-
-  renderChilds() {
+  
+  renderChilds(currentLevel, childs) {
     const
-      level = this.props.level + 1,
-      lastChild = this.props.childs.length - 1,
-      childs = this.props.childs.map((item, key) => {
+      level = currentLevel + 1,
+      lastChild = childs.length - 1,
+      renderChilds = childs.map((item, key) => {
         let edges = [];
-
+        
         if (key === 0) {
           edges.push('left');
         }
-
+        
         if (key === lastChild) {
           edges.push('right');
         }
-
-        return <SubTree parents={item.parents} childs={item.childs} level={level} edges={edges}/>
+        
+        return <SubTree parents={item.parents} childs={item.childs} level={level} edges={edges}/>;
       });
-
+    
     return ([
       <PairChildsConnector/>,
       <div className='subtree__childs'>
-        {childs}
-      </div>
+        {renderChilds}
+      </div>,
     ]);
   }
 }

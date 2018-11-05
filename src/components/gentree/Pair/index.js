@@ -1,27 +1,27 @@
-import React, {PureComponent} from 'react'
-import Person from 'components/gentree/Person'
-import './style.scss'
+import React, { PureComponent } from 'react';
+import Person from 'components/gentree/Person';
+import './style.scss';
 
 export default class Pair extends PureComponent {
   render() {
     const
-      self = this,
-      parents = this.props.parents.map(function (person, index) {
+      { parents, isRoot, edges, haveChilds } = this.props,
+      renderParents = parents.map(function (person, index) {
         let className = [
           'pair__item',
-          `pair__item_${index === 0 ? 'first' : 'last'}`
+          `pair__item_${index === 0 ? 'first' : 'last'}`,
         ];
-
-        if (!self.props.isRoot) {
-          className.push(`pair__item_nested`)
+        
+        if (!isRoot) {
+          className.push(`pair__item_nested`);
         }
-
-        if (self.props.edges) {
-          self.props.edges.forEach(edge => {
-            className.push(`pair__item_edge-${edge}`)
-          })
+        
+        if (edges) {
+          edges.forEach(edge => {
+            className.push(`pair__item_edge-${edge}`);
+          });
         }
-
+        
         return (
           <div
             className={className.join(' ')}
@@ -29,16 +29,16 @@ export default class Pair extends PureComponent {
           >
             <Person person={person}/>
           </div>
-        )
+        );
       });
-
+    
     return (
       <div
-        className={`pair ${this.props.haveChilds ? 'pair_with-childs' : ''}`}
+        className={`pair ${haveChilds ? 'pair_with-childs' : ''}`}
       >
-        {parents}
+        {renderParents}
       </div>
-
-    )
+    
+    );
   }
 }
