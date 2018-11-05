@@ -1,10 +1,35 @@
-import React, {PureComponent} from 'react'
-import fixtures from 'fixtures/gentree'
-import Tree from 'components/gentree/Tree'
-import 'muicss/lib/sass/mui.scss'
+import React, { PureComponent } from 'react';
+import { connect } from 'react-redux';
+import Tree from 'components/gentree/Tree';
+import 'muicss/lib/sass/mui.scss';
+import { loadTree } from 'actions/TreeActions';
+import { openDetail, closeDetail } from 'actions/PersonDetailActions';
 
-export default class App extends PureComponent {
+class App extends PureComponent {
   render() {
-    return <Tree tree={fixtures}/>
+    const { tree, personDetail } = this.props;
+    return (
+      <div className='app'>
+        <Tree tree={tree.tree} error={tree.error} loading={tree.loading} loadTree={this.props.loadTree}/>
+      </div>
+    );
   }
 }
+
+const mapStateToProps = (store) => {
+  return {
+    tree: store.tree,
+    personDetail: store.personDetail,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    loadTree: () => dispatch(loadTree()),
+    openDetail: (id) => dispatch(openDetail(id)),
+    closeDetail: () => dispatch(closeDetail()),
+  };
+};
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

@@ -5,9 +5,15 @@
   "dependencies": {
     "muicss": "^0.9.41",
     "node-sass": "^4.9.4",
+    "prop-types": "^15.6.2",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
-    "react-scripts": "2.0.5"
+    "react-redux": "^5.1.0",
+    "react-scripts": "2.0.5",
+    "redux": "^4.0.1",
+    "redux-loader": "^0.5.0",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0"
   },
   "scripts": {
     "start": "NODE_PATH=src react-scripts start",
