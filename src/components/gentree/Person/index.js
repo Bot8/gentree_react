@@ -6,35 +6,40 @@ import Panel from 'muicss/lib/react/panel';
 import './person.css';
 
 export default class Person extends PureComponent {
-  constructor() {
-    super();
-    this.state = {
-      isHovered: false,
-    };
-  }
-  
-  render() {
-    const { person } = this.props,
-      panelClass = this.state.isHovered ? 'mui--z2' : 'mui--z1';
+    constructor() {
+        super();
+        this.state = {
+            isHovered: false,
+        };
+    }
     
-    return (
-      <Panel className={`person ${panelClass}`} onMouseEnter={this.handleHover} onMouseLeave={this.handleHover}>
-        {/*TODO remove debug span*/}
-        <span>#{person.id}</span>
-        <PersonPhoto photo={person.photo}/>
-        <PersonName
-          first_name={person.first_name}
-          last_name={person.last_name}
-          middle_name={person.middle_name}
-        />
-        <PersonYearsOfLife birth={person.birth} death={person.death}/>
-      </Panel>
-    );
-  }
-  
-  handleHover = () => {
-    this.setState({
-      isHovered: !this.state.isHovered,
-    });
-  };
+    render() {
+        const { person, onClick } = this.props,
+            panelClass = this.state.isHovered ? 'mui--z2' : 'mui--z1';
+        
+        return (
+            <Panel
+                className={`person ${panelClass}`}
+                onMouseEnter={this.handleHover}
+                onMouseLeave={this.handleHover}
+                onClick={onClick}
+            >
+                {/*TODO remove debug span*/}
+                <span>#{person.id}</span>
+                <PersonPhoto photo={person.photo}/>
+                <PersonName
+                    first_name={person.first_name}
+                    last_name={person.last_name}
+                    middle_name={person.middle_name}
+                />
+                <PersonYearsOfLife birth={person.birth} death={person.death}/>
+            </Panel>
+        );
+    }
+    
+    handleHover = () => {
+        this.setState({
+            isHovered: !this.state.isHovered,
+        });
+    };
 }

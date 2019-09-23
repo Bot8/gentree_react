@@ -4,6 +4,6 @@ import { personDetailReducer } from 'reducers/personDetail';
 import { treeReducer } from 'reducers/tree';
 
 export const rootReducer = combineReducers({
-  tree: treeReducer,
-  personDetail: personDetailReducer,
+    tree: treeReducer,
+    personDetail: personDetailReducer,
 });
