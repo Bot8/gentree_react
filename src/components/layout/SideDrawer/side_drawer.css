@@ -1,0 +1,19 @@
+#sidedrawer {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 200px;
+  left: -200px;
+  overflow: auto;
+  z-index: 2;
+  background-color: #fff;
+  transition: transform 0.2s;
+}
+
+
+/**
+ * Toggle Side drawer
+ */
+#sidedrawer.active {
+  transform: translate(200px);
+}

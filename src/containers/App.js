@@ -2,29 +2,48 @@ import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import Tree from 'components/gentree/Tree';
 import Detail from 'components/details/Details';
+import Layout from 'components/layout/Layout';
 import 'muicss/lib/sass/mui.scss';
 import { loadTree } from 'actions/TreeActions';
 import { openDetail, closeDetail } from 'actions/PersonDetailActions';
 
 class App extends PureComponent {
+    renderDetail = (personDetail) => {
+        if (!personDetail.isOpen) {
+            return null;
+        }
+        
+        return <Detail
+            isOpen={personDetail.isOpen}
+            person={personDetail.person}
+            loading={personDetail.loading}
+            error={personDetail.error}
+        />;
+    };
+    
+    renderTree = (tree) => {
+        return  <Tree
+            tree={tree.tree}
+            error={tree.error}
+            loading={tree.loading}
+            loadTree={this.props.loadTree}
+            openDetail={this.props.openDetail}
+            closeDetail={this.props.closeDetail}
+        />;
+    };
+    
     render() {
-        const { tree, personDetail } = this.props;
+        const { tree, personDetail } = this.props,
+            detailsContent = this.renderDetail(personDetail),
+            treeContent = this.renderTree(tree);
+        
         return (
             <div className='app'>
-                <Tree
-                    tree={tree.tree}
-                    error={tree.error}
-                    loading={tree.loading}
-                    loadTree={this.props.loadTree}
-                    openDetail={this.props.openDetail}
-                    closeDetail={this.props.closeDetail}
+                <Layout
+                    sideContent={detailsContent}
+                    mainContent={treeContent}
                 />
-                <Detail
-                    isOpen={personDetail.isOpen}
-                    person={personDetail.person}
-                    loading={personDetail.loading}
-                    error={personDetail.error}
-                />
+               
             </div>
         );
     }
