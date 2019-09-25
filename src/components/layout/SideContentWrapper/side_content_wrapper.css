@@ -1,4 +1,4 @@
-#sidedrawer {
+#layout_side-content-wrapper {
   position: fixed;
   top: 0;
   bottom: 0;
@@ -14,6 +14,6 @@
 /**
  * Toggle Side drawer
  */
-#sidedrawer.active {
+#layout_side-content-wrapper.layout_side-content-wrapper_opened {
   transform: translate(200px);
 }

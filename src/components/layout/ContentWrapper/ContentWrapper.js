@@ -3,10 +3,15 @@ import './content_wrapper.css';
 
 export default class ContentWrapper extends PureComponent {
     render() {
-        const { content, isSiderawerActive } = this.props;
+        const { content, isSideContentOpened } = this.props;
         
         return (
-            <div id="content-wrapper" className={isSiderawerActive ? 'shifted' : ''}>{content}</div>
+            <div
+                id="layout_content-wrapper"
+                className={isSideContentOpened ? 'layout_content-wrapper_shifted' : ''}
+            >
+                {content}
+            </div>
         );
     }
 }
