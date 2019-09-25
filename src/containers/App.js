@@ -35,7 +35,9 @@ class App extends PureComponent {
         return (
             <div className='app'>
                 <Layout
-                    sideContent={detailsContent} isSideContentOpen={personDetail.isOpen}
+                    sideContent={detailsContent}
+                    isSideContentOpen={personDetail.isOpen}
+                    closeSideContent={this.props.closeDetail}
                     mainContent={treeContent}
                 />
                
