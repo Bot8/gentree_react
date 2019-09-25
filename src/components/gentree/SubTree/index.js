@@ -12,12 +12,12 @@ export default class SubTree extends PureComponent {
                 <div className='subtree__parents'>
                     <Pair parents={parents} isRoot={isRoot} haveChilds={!!childs} edges={edges} onClick={onClick}/>
                 </div>
-                {childs && this.renderChilds(level, childs)}
+                {childs && this.renderChilds(level, childs, onClick)}
             </div>
         );
     }
     
-    renderChilds(currentLevel, childs) {
+    renderChilds(currentLevel, childs, onClick) {
         const
             level = currentLevel + 1,
             lastChild = childs.length - 1,
@@ -32,7 +32,7 @@ export default class SubTree extends PureComponent {
                     edges.push('right');
                 }
                 
-                return <SubTree parents={item.parents} childs={item.childs} level={level} edges={edges}/>;
+                return <SubTree parents={item.parents} childs={item.childs} level={level} edges={edges} onClick={onClick}/>;
             });
         
         return ([

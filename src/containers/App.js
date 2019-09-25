@@ -9,12 +9,7 @@ import { openDetail, closeDetail } from 'actions/PersonDetailActions';
 
 class App extends PureComponent {
     renderDetail = (personDetail) => {
-        if (!personDetail.isOpen) {
-            return null;
-        }
-        
         return <Detail
-            isOpen={personDetail.isOpen}
             person={personDetail.person}
             loading={personDetail.loading}
             error={personDetail.error}
@@ -40,7 +35,7 @@ class App extends PureComponent {
         return (
             <div className='app'>
                 <Layout
-                    sideContent={detailsContent}
+                    sideContent={detailsContent} isSideContentOpen={personDetail.isOpen}
                     mainContent={treeContent}
                 />
                

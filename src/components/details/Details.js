@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 export default class Details extends Component {
     renderContent = () => {
-        const { isOpen, person, loading, error } = this.props;
+        const { person, loading, error } = this.props;
         
         if (error) {
             return <p>Error: {error}</p>;
@@ -14,11 +14,6 @@ export default class Details extends Component {
         }
         
         return <p>
-            {isOpen &&
-            <h2>
-                open
-            </h2>
-            }
             {person &&
             <h2>
                 person
@@ -49,7 +44,6 @@ export default class Details extends Component {
 }
 
 Details.propTypes = {
-    isOpen: PropTypes.bool.isRequired,
     person: PropTypes.object,
     loading: PropTypes.bool.isRequired,
     error: PropTypes.bool.isRequired,

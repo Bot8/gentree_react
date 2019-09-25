@@ -4,13 +4,12 @@ import ContentWrapper from 'components/layout/ContentWrapper/ContentWrapper';
 
 export default class Layout extends PureComponent {
     render() {
-        const { sideContent, mainContent } = this.props,
-            isSideContentOpened = null !== sideContent;
+        const { mainContent, sideContent, isSideContentOpen } = this.props;
         
         return (
             <div>
-                <SideContentWrapper content={sideContent}/>
-                <ContentWrapper content={mainContent} isSideContentOpened={isSideContentOpened}/>
+                <SideContentWrapper content={sideContent} isSideContentOpened={isSideContentOpen}/>
+                <ContentWrapper content={mainContent} isSideContentOpened={isSideContentOpen}/>
             </div>
         );
     }
