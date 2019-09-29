@@ -10,7 +10,7 @@ export default class SideContentWrapper extends PureComponent {
         return (
             <div
                 id="layout_side-content-wrapper"
-                className={isSideContentOpen ? 'mui--z1 layout_side-content-wrapper_opened' : ''}
+                className={isSideContentOpen ? 'mui--z4 layout_side-content-wrapper_opened' : ''}
             >
                 <FontAwesomeIcon icon={faTimes} size="lg"  pull="right" onClick={closeSideContent}/>
                 {content}

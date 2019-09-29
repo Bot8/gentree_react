@@ -1,6 +1,8 @@
 import React, { PureComponent } from 'react';
 import SideContentWrapper from 'components/layout/SideContentWrapper/SideContentWrapper';
 import ContentWrapper from 'components/layout/ContentWrapper/ContentWrapper';
+import FooterWrapper from 'components/layout/FooterWrapper/FooterWrapper';
+import HeaderWrapper from 'components/layout/HeaderWrapper/HeaderWrapper';
 
 export default class Layout extends PureComponent {
     render() {
@@ -13,8 +15,14 @@ export default class Layout extends PureComponent {
                     isSideContentOpen={isSideContentOpen}
                     closeSideContent={closeSideContent}
                 />
+                <HeaderWrapper
+                    isSideContentOpened={isSideContentOpen}
+                />
                 <ContentWrapper
                     content={mainContent}
+                    isSideContentOpened={isSideContentOpen}
+                />
+                <FooterWrapper
                     isSideContentOpened={isSideContentOpen}
                 />
             </div>
